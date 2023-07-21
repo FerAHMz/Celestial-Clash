@@ -10,7 +10,7 @@ public class Asteroide extends Actor
 {
     /**
      * Act - do whatever the Asteroide wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * the 'Act' or 'Run' button gets pressed in the environment. hola. 
      */
     public void act()
     {
