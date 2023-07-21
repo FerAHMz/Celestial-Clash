@@ -17,13 +17,22 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        prepare();
+        Astronauta n1=new Astronauta();
+        addObject(n1,50,300);
+        crearAsteroides(25);
     }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare()
+    public void crearAsteroides(int numero)
     {
+        for(int i=0; i<numero; i++)
+        {
+            Asteroide a=new Asteroide();
+            int x=Greenfoot.getRandomNumber(getWidth());
+            int y=Greenfoot.getRandomNumber(getWidth());
+            addObject(a,x,y);
+        }
     }
 }
