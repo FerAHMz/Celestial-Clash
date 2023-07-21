@@ -8,12 +8,65 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Astronauta extends Actor
 {
+    public static final int UP = 270;
+    public static final int DOWN = 90;
+    public static final int LEFT = 180;
+    public static final int RIGHT = 0;
+    
+
     /**
      * Act - do whatever the Astronauta wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.isKeyDown("up")){
+            setDirection(UP);
+        }
+        if(Greenfoot.isKeyDown("down")){
+            setDirection(DOWN);
+        }
+        if(Greenfoot.isKeyDown("left")){
+            setDirection(LEFT);
+        }
+        if(Greenfoot.isKeyDown("right")){
+            setDirection(RIGHT);
+        }// Add your action code here.
+    }
+    public void setDirection(int direction){
+        switch(direction){
+            case UP:
+                setRotation(UP);
+                if(Greenfoot.isKeyDown("space")){
+                    setLocation(getX(), getY()-10);
+                }else{
+                    setLocation(getX(), getY()-1);
+                }
+                break;
+            case DOWN:
+                setRotation(DOWN);
+                if(Greenfoot.isKeyDown("space")){
+                    setLocation(getX(), getY()+10);
+                }else{
+                    setLocation(getX(), getY()+1);
+                }
+                break;
+            case LEFT:
+                setRotation(LEFT);
+                if(Greenfoot.isKeyDown("space")){
+                    setLocation(getX()-10, getY());
+                }else{
+                    setLocation(getX()-1, getY());
+                }
+                break;
+            case RIGHT:
+                setRotation(RIGHT);
+                if(Greenfoot.isKeyDown("space")){
+                    setLocation(getX()+10, getY());
+                }else{
+                    setLocation(getX()+1, getY());
+                }
+                break;
+        }
     }
 }
