@@ -14,6 +14,20 @@ public class Asteroide extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        move(2);
+        World m = getWorld();
+        if (m == null){
+            return;
+        }
+        
+        if(getX()>=m.getWidth()-5||getX()<=5)
+        {
+            turn(180);
+            if(Greenfoot.getRandomNumber(100)<90)
+            {
+                turn(Greenfoot.getRandomNumber(90-45));
+            }
+        }
+        
     }
 }
