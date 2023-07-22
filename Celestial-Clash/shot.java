@@ -37,7 +37,7 @@ public class shot extends Actor
         Actor Asteroide=getOneObjectAtOffset(0,0,Asteroide.class);
         
         if(Asteroide!=null){
-            espacio esp=(espacio)getWorld();
+            MyWorld esp=(MyWorld)getWorld();
             esp.puntos.incrementar();
             getWorld().removeObject(Asteroide);
             esp.removeObject(this);

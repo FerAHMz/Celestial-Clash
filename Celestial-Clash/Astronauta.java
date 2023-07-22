@@ -13,6 +13,9 @@ public class Astronauta extends Actor
     public static final int LEFT = 180;
     public static final int RIGHT = 0;
     
+    int directionShot = 2;
+    boolean isShot = false;
+    
 
     /**
      * Act - do whatever the Astronauta wants to do. This method is called whenever
@@ -32,6 +35,17 @@ public class Astronauta extends Actor
         if(Greenfoot.isKeyDown("right")){
             setDirection(RIGHT);
         }// Add your action code here.
+          setShot();
+    }
+      public void setShot() {
+        if(isShot && Greenfoot.isKeyDown("x")) {
+            shot s1 = new shot(getRotation());
+            getWorld().addObject(s1, getX(), getY());
+            isShot = false;
+        }
+        if(!isShot && !Greenfoot.isKeyDown("x")) {
+            isShot = true;
+        }
     }
     public void setDirection(int direction){
         switch(direction){
