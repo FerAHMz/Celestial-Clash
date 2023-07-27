@@ -28,6 +28,19 @@ public class Asteroide extends Actor
                 turn(Greenfoot.getRandomNumber(90-45));
             }
         }
-        
+        Actor Astronauta=getOneObjectAtOffset(0,0,Astronauta.class);
+        if(Astronauta!=null){
+            espacio esp=(espacio)getWorld();
+            if (esp != null){
+                esp.vidas.decrementar();
+                if(esp.vidas.obtenerValor()==0){
+                GameOver t=new GameOver();
+                getWorld().addObject(t,((getWorld().getWidth()/2)+30),((getWorld().getHeight()/2)+150));
+                }
+            }
+            m.removeObject(Astronauta);
+            m.addObject(new Astronauta(),50,300);
+            }
+        }
     }
-}
+

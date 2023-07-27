@@ -6,22 +6,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MyWorld extends World
+public class espacio extends World
 {
 
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-       public lifes objLife;
+    public lifes objLife;
     Tablero puntos;
     Tablero vidas;
-    public MyWorld()
+    public espacio()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        //agregar el game over. 
-        setPaintOrder(Tablero.class,Asteroide.class,Astronauta.class);
+        setPaintOrder(GameOver.class,Tablero.class,Asteroide.class,Astronauta.class);
         Astronauta n1=new Astronauta();
         addObject(n1,50,300);
         crearAsteroides(25);
