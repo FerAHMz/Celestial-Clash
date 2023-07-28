@@ -13,7 +13,8 @@ public class GameOver extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage imagen;
-    String mensaje;
+    String mensaje; 
+    private GreenfootSound music; 
     
     public GameOver()
     {
@@ -23,10 +24,13 @@ public class GameOver extends Actor
         imagen.drawString("Game Over",100,30);
         setImage(imagen);
         Greenfoot.stop();
+        music = new GreenfootSound("GameOver.mp3");  
+        music.setVolume(50); 
+        music.play(); 
     }
     
     public void act()
     {
-        
+     
     }
 }
