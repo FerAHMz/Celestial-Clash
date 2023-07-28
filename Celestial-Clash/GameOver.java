@@ -25,7 +25,7 @@ public class GameOver extends Actor
         setImage(imagen);
         Greenfoot.stop();
         music = new GreenfootSound("GameOver.mp3");  
-        music.setVolume(50); 
+        music.setVolume(100); 
         music.play(); 
     }
     
