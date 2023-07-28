@@ -5,6 +5,7 @@ public class shot extends Actor
     public static final int DOWN = 90;
     public static final int LEFT = 180;
     public static final int UP = 270;
+   
 
     int shotImage = 1;
     int speedShot = 6;

@@ -12,8 +12,7 @@ public class Astronauta extends Actor
     public static final int DOWN = 90;
     public static final int LEFT = 180;
     public static final int RIGHT = 0;
-    
-    int directionShot = 2;
+    private GreenfootSound musics;
     boolean isShot = false;
     
 
@@ -21,6 +20,9 @@ public class Astronauta extends Actor
      * Act - do whatever the Astronauta wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Astronauta() { 
+        musics = new GreenfootSound("Disparo.mp3"); 
+    }
     public void act()
     {
         if(Greenfoot.isKeyDown("up")){
@@ -41,7 +43,15 @@ public class Astronauta extends Actor
         if(isShot && Greenfoot.isKeyDown("x")) {
             shot s1 = new shot(getRotation());
             getWorld().addObject(s1, getX(), getY());
-            isShot = false;
+            isShot = false; 
+            //musics.play(); 
+            //musics.setVolume(100);  
+            if(!musics.isPlaying()){  
+                Thread soundThread = new Thread(() -> {  
+                    musics.play(); 
+                }); 
+                soundThread.start(); 
+            }
         }
         if(!isShot && !Greenfoot.isKeyDown("x")) {
             isShot = true;
